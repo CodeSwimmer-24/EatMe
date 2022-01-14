@@ -9,12 +9,12 @@ import {
 } from "react-native";
 
 export default function Header() {
-  const [activeBtn, setActiveBtn] = useState('Pickup');
+  const [activeBtn, setActiveBtn] = useState('Delivery');
 
   return (
     <SafeAreaView>
       <View
-        style={{ flexDirection: "row", alignSelf: "center", marginTop: 50 }}
+        style={{ flexDirection: "row", alignSelf: "center" }}
       >
         <HeaderButton
           text="Delivery"
@@ -35,18 +35,18 @@ export default function Header() {
   );
 }
 
-const HeaderButton = ({ text, btnColor, textColor, setActiveBtn, activeBtn }) => (
+const HeaderButton = ({ text, textColor, setActiveBtn, activeBtn }) => (
   <View>
     <TouchableOpacity
       style={{
-        backgroundColor: activeBtn === btnColor ? 'white' : 'black' ,
+        backgroundColor: activeBtn === textColor ? 'black' : 'white' ,
         paddingVertical: 8,
         paddingHorizontal: 18,
         borderRadius: 50,
       }}
       onPress={() => setActiveBtn(textColor)}
     >
-      <Text style={{ color: activeBtn === btnColor ? 'black' : 'white', fontSize: 15, fontWeight: "bold" }}>
+      <Text style={{ color: activeBtn === textColor ? 'white' : 'black', fontSize: 15, fontWeight: "bold" }}>
         {text}
       </Text>
     </TouchableOpacity>
